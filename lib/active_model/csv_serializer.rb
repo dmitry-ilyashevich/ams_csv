@@ -40,6 +40,7 @@ module ActiveModel
       @object = object
       @root = options.fetch(:root, self.class.root)
       @prefix = options.fetch(:prefix, '')
+      @options = options
     end
 
     def to_a
