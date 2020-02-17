@@ -6,8 +6,8 @@ describe 'headers' do
     serializer = PostCsvSerializer.new(post)
     csv = serializer.to_csv
 
-    expect(csv).to include('name')
-    expect(csv).to include('body')
+    expect(csv).to include('Name')
+    expect(csv).to include('Body')
   end
 
   context 'when root option set to false during serializer instantiation' do
@@ -16,8 +16,8 @@ describe 'headers' do
       serializer = PostCsvSerializer.new(post, root: false)
       csv = serializer.to_csv
 
-      expect(csv).to_not include('name')
-      expect(csv).to_not include('body')
+      expect(csv).to_not include('Name')
+      expect(csv).to_not include('Body')
     end
   end
 
@@ -30,8 +30,8 @@ describe 'headers' do
       serializer = PostCsvSerializer.new(post, root: false)
       csv = serializer.to_csv
 
-      expect(csv).to_not include('name')
-      expect(csv).to_not include('body')
+      expect(csv).to_not include('Name')
+      expect(csv).to_not include('Body')
     end
   end
 
@@ -44,8 +44,8 @@ describe 'headers' do
       serializer = PostCsvSerializer.new(post, root: false)
       csv = serializer.to_csv
 
-      expect(csv).to_not include('name')
-      expect(csv).to_not include('body')
+      expect(csv).to_not include('Name')
+      expect(csv).to_not include('Body')
     end
   end
 
@@ -56,8 +56,8 @@ describe 'headers' do
       serializer = AuthorCsvSerializer.new(author)
       csv = serializer.to_csv
 
-      expect(csv).to include('name')
-      expect(csv).to include('category_name')
+      expect(csv).to include('Name')
+      expect(csv).to include('Category Name')
     end
   end
 
@@ -69,10 +69,10 @@ describe 'headers' do
       serializer = PostCsvSerializer.new(post)
       csv = serializer.to_csv
 
-      expect(csv).to include('name')
-      expect(csv).to include('body')
-      expect(csv).to include('author_name')
-      expect(csv).to include('category_name')
+      expect(csv).to include('Name')
+      expect(csv).to include('Body')
+      expect(csv).to include('Author Name')
+      expect(csv).to include('Category Name')
     end
   end
 
@@ -87,9 +87,9 @@ describe 'headers' do
       serializer = PostCsvSerializer.new(post)
       csv = serializer.to_csv
 
-      expect(csv).to include('name')
-      expect(csv).to include('body')
-      expect(csv).to include('comments_text') # TODO: singular prefix
+      expect(csv).to include('Name')
+      expect(csv).to include('Body')
+      expect(csv).to include('Comments Text') # TODO: singular prefix
       expect(csv.split("\n").length).to eq(4)
     end
   end

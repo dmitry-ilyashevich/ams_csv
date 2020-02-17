@@ -69,7 +69,7 @@ module ActiveModel
       end
       associated_serializers.reduce(names) do |names, serializer|
         names.concat serializer.attribute_names
-      end
+      end.map(&:titleize)
     end
 
     private
