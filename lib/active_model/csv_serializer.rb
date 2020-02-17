@@ -51,6 +51,7 @@ module ActiveModel
       associated_serializers.each do |serializer|
         values = values.product(serializer.to_a).collect(&:flatten)
       end
+      puts values.inspect
 
       values
     end

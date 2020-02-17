@@ -13,6 +13,7 @@ describe 'ArraySerializer' do
     )
     csv = array_serializer.to_csv
 
+    expect(csv).to include('text')
     expect(csv).to include(comment_1.text)
     expect(csv).to include(comment_2.text)
   end
