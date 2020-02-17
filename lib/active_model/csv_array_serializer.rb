@@ -20,7 +20,10 @@ module ActiveModel
     end
 
     def to_csv
-      (@root ? [attribute_names] + to_a : to_a).to_csv
+      CSV.generate do |csv|
+        csv << attribute_names if @root
+        to_a.each { |record| csv << record }
+      end
     end
 
     def attribute_names
